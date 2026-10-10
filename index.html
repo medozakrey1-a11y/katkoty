@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#24121e">
+<title>توتي وميمي ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:wght@400;700&display=swap');
+
+:root{
+  --pink:#ff83b4;
+  --rose:#c83d72;
+  --wine:#541b35;
+  --gold:#e9c78d;
+  --cream:#fff2e8;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;
+  font-family:'Cairo',sans-serif;color:var(--cream);
+  background:#24121e url('background.jpg.jpg') center/cover fixed;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:linear-gradient(135deg,rgba(23,10,21,.83),rgba(66,18,43,.74));
+}
+button{font:inherit;cursor:pointer}
+.hidden{display:none!important}
+
+/* إطار الموقع */
+.frame{
+  width:min(1250px,calc(100% - 28px));
+  margin:22px auto;padding:9px;
+  border:2px solid var(--gold);border-radius:28px;
+  background:rgba(35,14,29,.43);
+  box-shadow:0 15px 70px #0008,0 0 0 5px #e9c78d15;
+  position:relative;
+}
+.inner{
+  border:1px solid #f4b6cd70;
+  border-radius:20px;overflow:hidden;position:relative;
+  min-height:90vh;
+}
+
+/* فيديو هيلو كيتي يملأ الإطار */
+.kitty-background{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:-1;opacity:.22;
+  pointer-events:none;
+}
+.inner:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#24121e99,#321324c9);
+  pointer-events:none;
+}
+.topbar{
+  height:58px;position:relative;overflow:hidden;
+  display:flex;align-items:center;
+  border-bottom:1px solid #e9c78d66;
+  background:#190d18a8;
+}
+.track{
+  display:flex;align-items:center;width:max-content;
+  animation:move 22s linear infinite;
+}
+.track span{white-space:nowrap;padding:0 24px;color:#ffd3e3;font-weight:800}
+.track video{width:75px;height:46px;object-fit:contain}
+@keyframes move{to{transform:translateX(-50%)}}
+
+/* المقدمة */
+.hero{
+  min-height:78vh;padding:60px 20px;
+  display:grid;place-items:center;text-align:center;
+  position:relative;isolation:isolate;
+}
+.hero:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(90deg,#20101db8,#3014267a,#20101dc9),
+    url('background.jpg.jpg') center 35%/cover;
+  filter:saturate(.85);
+}
+.hero-content{max-width:760px;animation:rise 1s ease both}
+.eyebrow{
+  display:inline-block;border:1px solid var(--gold);
+  color:#ffe3bb;border-radius:40px;padding:8px 19px;
+  background:#29121fbb;font-size:13px;letter-spacing:.4px;
+}
+h1{
+  font-size:clamp(34px,7vw,68px);line-height:1.6;
+  color:#ffd0e2;text-shadow:0 5px 28px #ff5a9b65;
+  margin:22px 0 12px;
+}
+.hero p{line-height:2.2;font-size:17px;color:#ffedf3}
+.primary{
+  color:#311321;background:linear-gradient(135deg,#ffe4b1,#f6a6c8);
+  border:1px solid #fff0d0;border-radius:40px;
+  padding:14px 30px;font-weight:900;
+  box-shadow:0 8px 30px #ff85b444;
+  transition:.25s;
+}
+.primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px #ff85b477}
+.small{font-size:12px;color:#f4c9d9;margin-top:18px}
+
+/* الورد */
+.rose-scene{
+  position:fixed;inset:0;z-index:100;
+  display:grid;place-items:center;
+  background:#1b0c19ed;backdrop-filter:blur(10px);
+  opacity:0;visibility:hidden;transition:.2s;
+}
+.rose-scene.show{opacity:1;visibility:visible}
+.rose-card{text-align:center;animation:roseIn .75s cubic-bezier(.2,.9,.3,1.3) both}
+.rose-card svg{width:min(300px,70vw);height:auto;filter:drop-shadow(0 12px 25px #d51b503d)}
+.rose-card h2{color:#ffc0d8;font-size:clamp(22px,5vw,34px)}
+.rose-card p{padding:0 20px;color:#ffe8f0;line-height:2}
+@keyframes roseIn{
+  from{transform:scale(.4) translateY(30px);opacity:0}
+  to{transform:scale(1) translateY(0);opacity:1}
+}
+
+/* القوائم */
+.content{padding:28px clamp(12px,4vw,45px) 45px}
+.heading{text-align:center;color:#ffd0e2;font-size:clamp(27px,5vw,43px);margin:18px 0 7px}
+.subtitle{text-align:center;color:#f2d3df;line-height:2;margin:0 auto 32px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:950px;margin:auto}
+.card{
+  padding:30px 20px;text-align:center;
+  border:1px solid #e9c78d88;border-radius:23px;
+  background:linear-gradient(145deg,#452036e8,#27131ff0);
+  box-shadow:0 12px 30px #0003;transition:.3s;
+}
+.card:hover{transform:translateY(-5px);border-color:#ffd4e5}
+.card .icon{font-size:46px}
+.card h3{color:#ffc0d8;font-size:23px;margin:9px 0}
+.card p{color:#ead0dc;line-height:2;font-size:14px}
+.secondary{
+  border:1px solid #f2b8ce;background:#f5cadb;color:#48192f;
+  padding:10px 21px;border-radius:30px;font-weight:800;
+}
+footer{text-align:center;color:#e8bdcf;font-size:12px;padding:24px 10px}
+
+/* الرسائل */
+.subpage{padding:22px clamp(10px,3vw,35px) 45px;animation:rise .4s ease}
+.back{border:1px solid #e9c78d;background:#2c1425;color:#ffe2ec;padding:9px 17px;border-radius:30px}
+.letters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.letter{
+  padding:22px 14px;text-align:center;border-radius:18px;
+  background:#351729;border:1px solid #cb769b77;
+}
+.letter .icon{font-size:36px}
+.letter h3{color:#ffd0e2;line-height:1.9;font-size:16px;min-height:58px}
+.letter button{border:0;background:#e986b0;color:#351326;border-radius:30px;padding:10px 15px;font-weight:800}
+.modal{
+  position:fixed;inset:0;z-index:150;background:#110710e8;
+  backdrop-filter:blur(8px);display:grid;place-items:center;padding:15px;
+}
+.modal-box{
+  width:min(760px,100%);max-height:86vh;overflow:auto;
+  padding:28px;background:#301728;border:1px solid #e9c78d;
+  border-radius:22px;position:relative;
+  box-shadow:0 15px 60px #0008;animation:rise .3s ease;
+}
+.modal-box h2{color:#ffc0d8;padding-left:35px}
+.close{
+  position:absolute;left:13px;top:13px;border:0;
+  border-radius:50%;width:38px;height:38px;
+  background:#f3c2d6;color:#42182e;font-size:22px;
+}
+.letter-text{white-space:pre-line;line-height:2.2;color:#ffedf3;font-size:16px;overflow-wrap:anywhere}
+
+/* الكتاب: مساحة أكبر */
+.book-intro{text-align:center}
+.cover{
+  width:min(460px,95%);height:570px;max-height:75vh;
+  margin:25px auto;border-radius:7px 20px 20px 7px;
+  border-right:15px solid #55203b;
+  background:
+    linear-gradient(180deg,#1c101030,#26101ca8),
+    url('book.cover.jpg.jpg') center/cover,
+    linear-gradient(140deg,#b14d7a,#311627);
+  box-shadow:13px 14px 0 #b86a8b,24px 28px 50px #0006;
+  display:flex;flex-direction:column;justify-content:space-between;
+  align-items:center;padding:40px 18px;position:relative;overflow:hidden;
+}
+.cover:before{
+  content:"";position:absolute;inset:15px;
+  border:2px solid #f8dfb8b0;border-radius:4px 13px 13px 4px;
+}
+.cover-title{font-size:clamp(35px,7vw,54px);font-weight:900;color:#ffe2ec;text-shadow:0 3px 15px #190914;z-index:1}
+.cover-tag{font-size:16px;color:#ffe5ba;text-shadow:0 2px 8px #000;z-index:1}
+.cover-sticker{font-size:62px;filter:drop-shadow(0 5px 12px #0006);z-index:1}
+.book-hint{font-size:13px;color:#e8c2d2;line-height:2}
+
+.reader{max-width:1100px;margin:25px auto}
+.book{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:#ead0b7;border:9px solid #67324c;
+  border-radius:6px 18px 18px 6px;
+  box-shadow:0 20px 55px #0006;overflow:hidden;
+  perspective:1600px;
+}
+.page{
+  min-width:0;min-height:620px;padding:clamp(15px,3vw,32px);
+  color:#4a2938;background:
+    radial-gradient(ellipse at top left,#fffdf3,transparent 70%),#fff5e7;
+  position:relative;animation:pageIn .5s ease both;
+}
+.page:first-child{border-left:2px solid #d9b9a5;box-shadow:inset -9px 0 14px -13px #492335}
+.page:last-child{box-shadow:inset 9px 0 14px -13px #492335}
+.page h3{font-size:clamp(17px,2.4vw,23px);text-align:center;line-height:1.9;color:#a73e68;margin:0 0 18px}
+.couple{width:100%;height:290px;object-fit:contain;background:#f3e2d8;margin-bottom:16px;border:5px solid white;border-radius:8px}
+.story{font-family:'Amiri',serif;font-size:clamp(16px,1.8vw,20px);line-height:2.1;white-space:pre-line;overflow-wrap:anywhere}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.photo-cell{background:#fff;border:1px solid #e5c6c9;padding:7px 7px 22px;box-shadow:0 4px 10px #64354b20;transform:rotate(-1deg)}
+.photo-cell:nth-child(even){transform:rotate(1.5deg)}
+.photo-cell img{display:block;width:100%;height:215px;object-fit:cover;cursor:zoom-in}
+.photo-cell figcaption{text-align:center;font-size:12px;color:#8a5268;margin-top:7px}
+.book-controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}
+.book-controls button{background:#e994b8;color:#351326;border:1px solid #ffcfdf;border-radius:30px;padding:12px 20px;font-weight:800}
+.book-controls button:disabled{opacity:.4;cursor:not-allowed}
+.counter{text-align:center;color:#f3d5e1;font-size:13px}
+.flip-next{animation:flipNext .5s ease}
+.flip-prev{animation:flipPrev .5s ease}
+@keyframes flipNext{50%{transform:rotateY(-7deg) scale(.99);filter:brightness(.8)}}
+@keyframes flipPrev{50%{transform:rotateY(7deg) scale(.99);filter:brightness(.8)}}
+@keyframes pageIn{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+@media(max-width:750px){
+  .frame{width:calc(100% - 14px);margin:12px auto;padding:6px}
+  .hero{min-height:70vh;padding:35px 14px}
+  .grid,.letters{grid-template-columns:1fr}
+  .card{padding:22px 15px}
+  .cover{height:470px}
+  .book{grid-template-columns:1fr;border-width:5px}
+  .page{min-height:auto;padding:20px}
+  .page:first-child{border-left:0;border-bottom:2px dashed #d9b9a5}
+  .couple{height:260px}
+  .photo-cell img{height:170px}
+  .modal-box{padding:24px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+<div class="frame">
+<div class="inner">
+
+  <div class="topbar">
+    <div class="track">
+      <span>🎀 HELLO KITTY 🎀</span>
+      <video src="hello-kitty.mp4.mp4" autoplay muted loop playsinline></video>
+      <span>♡ توتي وميمي ♡</span>
+      <video src="hello-kitty.mp4.mp4" autoplay muted loop playsinline></video>
+      <span>🎀 MY MIMI 🎀</span>
+      <video src="hello-kitty.mp4.mp4" autoplay muted loop playsinline></video>
+      <span>♡ توتي وميمي ♡</span>
+      <video src="hello-kitty.mp4.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+
+  <!-- المقدمة -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="eyebrow">A LITTLE WORLD MADE JUST FOR YOU ♡</div>
+      <h1>دوسي هنا يا نور عيوني🥰</h1>
+      <p>كل تفصيلة هنا معمولة مخصوص ليكي يا مريومتي.<br>
+      عندي ليكي شوية كلام من القلب وكتاب صغير لحكايتنا 🎀</p>
+      <button class="primary" id="enterBtn">افتحي عالمنا يا قمري ♡</button>
+      <div class="small">A little love, just for Mimi 🌹</div>
+    </div>
+  </section>
+
+  <!-- ورد مرسوم بدل الإيموجي -->
+  <div class="rose-scene" id="roseScene">
+    <div class="rose-card">
+      <svg viewBox="0 0 300 300" role="img" aria-label="باقة ورد أحمر">
+        <defs>
+          <radialGradient id="petal" cx="35%" cy="30%">
+            <stop offset="0" stop-color="#ff9aab"/>
+            <stop offset=".55" stop-color="#e52650"/>
+            <stop offset="1" stop-color="#790d31"/>
+          </radialGradient>
+          <linearGradient id="leaf" x2="1" y2="1">
+            <stop stop-color="#8fc47a"/><stop offset="1" stop-color="#275a39"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="150" cy="270" rx="85" ry="12" fill="#000" opacity=".17"/>
+        <path d="M140 170 Q126 220 105 260 M151 165 Q155 220 155 263 M163 168 Q188 215 207 257"
+          fill="none" stroke="#477747" stroke-width="5"/>
+        <path d="M137 205 Q88 169 79 211 Q111 231 137 205Z" fill="url(#leaf)"/>
+        <path d="M166 218 Q216 175 222 218 Q191 243 166 218Z" fill="url(#leaf)"/>
+        <path d="M147 235 Q116 212 112 241 Q130 258 147 235Z" fill="url(#leaf)"/>
+        <g transform="translate(93 105)">
+          <circle r="43" fill="url(#petal)"/>
+          <g fill="#ff637e">
+            <ellipse cy="-20" rx="19" ry="25"/>
+            <ellipse cy="20" rx="19" ry="25"/>
+            <ellipse cx="-20" rx="25" ry="19"/>
+            <ellipse cx="20" rx="25" ry="19"/>
+          </g>
+          <circle r="25" fill="#b81742"/>
+          <path d="M-14 3 Q-24 -16 -5 -20 Q15 -22 15 -5 Q14 8 0 9 Q-10 8 -7 0 Q-3 -7 4 -3"
+            fill="none" stroke="#ff9ba9" stroke-width="8" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(160 75) scale(1.1)">
+          <circle r="43" fill="url(#petal)"/>
+          <g fill="#ff7188">
+            <ellipse cy="-20" rx="19" ry="25"/>
+            <ellipse cy="20" rx="19" ry="25"/>
+            <ellipse cx="-20" rx="25" ry="19"/>
+            <ellipse cx="20" rx="25" ry="19"/>
+          </g>
+          <circle r="25" fill="#a30d37"/>
+          <path d="M-14 3 Q-24 -16 -5 -20 Q15 -22 15 -5 Q14 8 0 9 Q-10 8 -7 0 Q-3 -7 4 -3"
+            fill="none" stroke="#ff9ba9" stroke-width="8" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(211 125) scale(.82)">
+          <circle r="43" fill="url(#petal)"/>
+          <g fill="#ff7188">
+            <ellipse cy="-20" rx="19" ry="25"/>
+            <ellipse cy="20" rx="19" ry="25"/>
+            <ellipse cx="-20" rx="25" ry="19"/>
+            <ellipse cx="20" rx="25" ry="19"/>
+          </g>
+          <circle r="25" fill="#a30d37"/>
+          <path d="M-14 3 Q-24 -16 -5 -20 Q15 -22 15 -5 Q14 8 0 9 Q-10 8 -7 0 Q-3 -7 4 -3"
+            fill="none" stroke="#ff9ba9" stroke-width="8" stroke-linecap="round"/>
+        </g>
+        <path d="M110 172 Q130 195 152 179 Q173 202 195 176 L208 247 Q159 280 108 247Z"
+          fill="#b84c76" opacity=".9"/>
+        <path d="M130 190 L150 213 L174 190" fill="none" stroke="#ffd3e0" stroke-width="5"/>
+        <path d="M150 213 Q110 205 116 231 Q134 242 150 213 Q173 202 184 222 Q178 242 150 213"
+          fill="#f3a4c3" stroke="#ffd5e3" stroke-width="2"/>
+      </svg>
+      <h2>لأحلى بنوتة في الدنيا ❤️</h2>
+      <p>بوكيه ورد مخصوص لمريومتي ♡</p>
+    </div>
+  </div>
+
+  <!-- القوائم -->
+  <main class="content hidden" id="mainContent">
+    <h2 class="heading">أهلًا بقمري أنا 🎀</h2>
+    <p class="subtitle">اختاري اللي قلبك محتاجه يا رومتي ♡</p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">💌</div>
+        <h3>رسايلي وكتسة</h3>
+        <p>تلات رسايل من قلبي ليكي، لكل وقت محتاجة تسمعي فيه كلامي.</p>
+        <button class="secondary" onclick="showPage('lettersPage')">افتحي رسايلك ♡</button>
+      </article>
+      <article class="card">
+        <div class="icon">📖🎀</div>
+        <h3>كتاب توتي وميمي</h3>
+        <p>ذكرياتنا وصور القمر بتاعي في كتاب واحد معمول بحب.</p>
+        <button class="secondary" onclick="showPage('bookPage')">افتحي كتابنا ♡</button>
+      </article>
+    </div>
+    <footer>كل تفصيلة هنا معمولة مخصوص لمريومتي ♡</footer>
+  </main>
+
+  <!-- الرسائل -->
+  <section class="subpage hidden" id="lettersPage">
+    <button class="back" onclick="showPage('mainContent')">→ رجوع</button>
+    <h2 class="heading">رسايلي وكتسة 💌</h2>
+    <p class="subtitle">اختاري الرسالة اللي محتاجاها دلوقتي يا مريومتي.</p>
+    <div class="letters">
+      <article class="letter"><div class="icon">💌</div><h3>افتحيني لو عايزة تشجيع</h3><button onclick="openLetter(0)">افتحي رسالتي ♡</button></article>
+      <article class="letter"><div class="icon">🩷</div><h3>افتحيني لو خايفة</h3><button onclick="openLetter(1)">افتحي رسالتي ♡</button></article>
+      <article class="letter"><div class="icon">🦋</div><h3>افتحيني لو تايهة</h3><button onclick="openLetter(2)">افتحي رسالتي ♡</button></article>
+    </div>
+  </section>
+
+  <!-- الكتاب -->
+  <section class="subpage hidden" id="bookPage">
+    <button class="back" onclick="showPage('mainContent')">→ رجوع</button>
+    <div id="bookIntro" class="book-intro">
+      <h2 class="heading">كتاب توتي وميمي</h2>
+      <p class="subtitle">حكاية صغيرة من قلب كبير ♡</p>
+      <div class="cover">
+        <div class="cover-tag">حكاية صغيرة من قلب كبير</div>
+        <div class="cover-sticker">🎀</div>
+        <div class="cover-title">توتي وميمي</div>
+        <div class="cover-tag">MADE WITH LOVE ♡</div>
+      </div>
+      <button class="primary" onclick="openBook()">افتحي كتابنا يا ميمي 📖</button>
+      <p class="book-hint">خدي نفس كده وتعالي نشوف ذكرياتنا ♡</p>
+    </div>
+
+    <div id="bookReader" class="reader hidden">
+      <div class="book" id="book">
+        <article class="page">
+          <h3>حكايتنا الصغيرة ♡</h3>
+          <img class="couple" src="book.pic1.jpg.jpg" alt="صورتنا مع بعض">
+          <div class="story" id="story"></div>
+        </article>
+        <article class="page">
+          <h3>قولت لازم اوريكم القمر بتاعي بردو عشان تعرفوا انا مسحور ازاي بجد</h3>
+          <div class="photo-grid">
+            <div class="photo-cell"><img src="book.pic1.jpg.jpg" alt="ميمي 1" onclick="zoomPhoto(this.src)"><figcaption>قمري ♡</figcaption></div>
+            <div class="photo-cell"><img src="book.pic2.jpg.jpg" alt="ميمي 2" onclick="zoomPhoto(this.src)"><figcaption>مريومتي 🎀</figcaption></div>
+            <div class="photo-cell"><img src="book.pic3.jpg.jpg" alt="ميمي 3" onclick="zoomPhoto(this.src)"><figcaption>نور عيوني</figcaption></div>
+            <div class="photo-cell"><img src="book.pic4.jpg.jpg" alt="ميمي 4" onclick="zoomPhoto(this.src)"><figcaption>أحلى صدفة ♡</figcaption></div>
+          </div>
+        </article>
+      </div>
+      <div class="book-controls">
+        <button id="prev" onclick="turnPage(-1)" disabled>❮ الصفحة السابقة</button>
+        <button id="next" onclick="turnPage(1)">الصفحة التالية ❯</button>
+      </div>
+      <div class="counter" id="counter">صفحة ١ من ٢</div>
+      <div style="text-align:center;margin-top:20px"><button class="back" onclick="closeBook()">اقفلي الكتاب 🎀</button></div>
+    </div>
+  </section>
+
+  <footer>توتي وميمي ♡ حكاية ليها مكان في القلب</footer>
+</div>
+</div>
+
+<!-- نافذة الرسائل -->
+<div class="modal hidden" id="letterModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="close" onclick="closeLetter()">×</button>
+    <h2 id="letterTitle"></h2>
+    <div class="letter-text" id="letterText"></div>
+    <div style="text-align:center;margin-top:22px"><button class="primary" onclick="closeLetter()">بحبك يا مريومتي 💗</button></div>
+  </div>
+</div>
+
+<!-- تكبير الصور -->
+<div class="modal hidden" id="photoModal" onclick="if(event.target===this)closeZoom()">
+  <div class="modal-box" style="text-align:center">
+    <button class="close" onclick="closeZoom()">×</button>
+    <img id="zoomed" alt="صورة مكبرة" style="max-width:100%;max-height:70vh;object-fit:contain">
+  </div>
+</div>
+
+<audio id="flipSound" src="page-flip.mp3.mp3" preload="auto"></audio>
+
+<script>
+const letters = [
+{
+title:'افتحيني لو عايزة تشجيع',
+body:`ازيك يا مريومتي عارف انك مضغوطة الفترة دي يانور عيوني بس كله هيهون ياروحي وكله هيبقا سهل والله ان شاء الله وانا واثق فيكي اوي اوي اوي يا كتكوتة انك هتبقي احسن بنوتة واشطر واحدة والله و وفخور بكل حاجة انت بتعمليها والله وشايف تعبك وشايف انت بتجتهدي قد ايه وبتتعبي ازاي وفاهم انت بتمري ب ايه بس اوعي تفقدي ثقتك في نفسك عشان انت جميلة اوي والله وشطورة وعسل كدة تتحطي في فينو🥰.المهم يعني شدي حيلك اجتهدي كدا في مذاكرتك عايزك شطورة ديما عايزك ديما رافعة راسك ديما عارفة قيمة نفسك ديما عارفة انك مينفعش تتقارني بحد وانك ديما كسبانة يارومي لازم تعرفي ان لازم نتعب عشان نوصل.كل ما تضيق بيكي قولي اللهم اني اسعى فارزقني يارب لذة الوصول يارب علمني يارب علمني يارب علمني وان شاء الله ربنا هيفكها في وشك ياقطتي ربنا يسعدك ويسعد قلبك يارومي ويوفقك يارب ياروحي ويثبتك على النجاح والطريق الصح`
+},
+{
+title:'افتحيني لو خايفة',
+body:`ايه يارومي يعني تخافي ياقطتي وانا معاكي عارفة لو بينا مشاكل الدنيا اياكي ياروما تترددي تيجي تترمي في حضني او في شاتنا لغاية ما تترمي في حضني بجد وتحكيلي اي حاجة قالقاكي او مخوفاكي وانا ديما في ضهرك وديما مساندك وديما هنصرك انت ياحبيبتي وعمري ما هكسب حد على قفاكي واي حد يفكر بس يا كتكوتة يزعلك او بس تحسي انه قلل منك تقوليلي وانا هخليكي تدوسي على وش امه مش وشه هو بس.`
+},
+{
+title:'افتحيني لو تايهة',
+body:`هاح حواراتك كترت انت خدي بالك المهم ياست البنات ياقمر القمرات انت ياحلوة الحلوين تايهة ليه وخايفة ليه وشايلة هم أكبر منك ليه ياكتكوتة انت يعني عيب بجد يعني يعني اكون معاكي كدة كدة وتايهة بجد عيببببببب المهم يعني ايا كان ياقطتي انت تايهة ليه خايفة ليه سواء خايفة من بكرة خايفة من المستقبل مضغوطة من المذاكرة افتكري ان لازم تركزي في الحاضر تركزي في الوقت الحالي بس يارومتي وربنا هيدبرلك بكرة في حديث قدسي ربنا قال يابن ادم لو رضيت بما كتبته لك ارحت قلبك وبدنك ولو لم ترضى معنى الكلام هتفضل تايه في الأرض وتعبان فديما ارضي بالنهاردة وديما ارضي بالي ربنا كتبهولك النهاردة سواء حلو او وحش ياقطتي.ثم خليكي انسانة محترمة انسانة كويسة انسانة تستاهل بجد يتقال عليها مريم عشان انت اسمك ده حاجة جميلة اوي عامة اسم كدة يعني بحبه عشان اسمك وخلاص فاهمة الفكرة فمينفعش يعني واحدة زي القمر زيك كدة تبقا تايهة وخايفة.`
+}
+];
+
+document.getElementById('story').textContent =
+`ده بقا تريند عملته ساعتها مع مريومتي نور عيوني حبيبتي الي هي اجمل واحلى صدفة حصلتلي في حياتي صح مكفرة سيئاتي وحواراتها كتير بس هي بنت زي القمر وانا بحبها اوي والله وادت حياتي طعم ومعنى كدة خلت يومي جميل وهي كلها جميلة قادرة تخلي اي حاجة حلوة زيها،مع ان منكرش صراحة صعب الاقي حاجة احلى منها والاصعب اني الاقي حد يقدر يشغل قلبي زي ما هي عملت باختصار يعني هي دنيتي وصاحبتي وبنتي وحبيبتي وكل حاجة حلوة ليا هي مريومة`;
+
+const $ = id => document.getElementById(id);
+
+function showPage(id){
+  ['mainContent','lettersPage','bookPage'].forEach(page =>
+    $(page).classList.toggle('hidden',page!==id)
+  );
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function openLetter(i){
+  $('letterTitle').textContent=letters[i].title;
+  $('letterText').textContent=letters[i].body;
+  $('letterModal').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+function closeLetter(){
+  $('letterModal').classList.add('hidden');
+  document.body.style.overflow='';
+}
+
+/* الورد يظهر ثانية واحدة فقط */
+let entered=false;
+$('enterBtn').addEventListener('click',()=>{
+  if(entered)return;
+  entered=true;
+  $('roseScene').classList.add('show');
+  setTimeout(()=>{
+    $('roseScene').classList.remove('show');
+    $('hero').classList.add('hidden');
+    $('mainContent').classList.remove('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+  },1000);
+});
+
+/* تشغيل أول نصف ثانية فقط من صوت تقليب الصفحة */
+let audioTimer;
+const audio=$('flipSound');
+audio.addEventListener('play',()=>{
+  clearTimeout(audioTimer);
+  audioTimer=setTimeout(()=>{
+    audio.pause();
+    audio.currentTime=0;
+  },500);
+});
+
+let page=0;
+function openBook(){
+  page=0;
+  $('bookIntro').classList.add('hidden');
+  $('bookReader').classList.remove('hidden');
+  updateBook();
+}
+function closeBook(){
+  $('bookReader').classList.add('hidden');
+  $('bookIntro').classList.remove('hidden');
+}
+function turnPage(dir){
+  const next=page+dir;
+  if(next<0||next>1)return;
+  page=next;
+
+  const book=$('book');
+  book.classList.remove('flip-next','flip-prev');
+  void book.offsetWidth;
+  book.classList.add(dir>0?'flip-next':'flip-prev');
+
+  try{
+    clearTimeout(audioTimer);
+    audio.pause();
+    audio.currentTime=0;
+    const result=audio.play();
+    if(result && result.catch)result.catch(()=>{});
+  }catch(e){}
+
+  updateBook();
+}
+function updateBook(){
+  $('prev').disabled=page===0;
+  $('next').disabled=page===1;
+  $('counter').textContent=page===0?'صفحة ١ من ٢':'صفحة ٢ من ٢';
+}
+function zoomPhoto(src){
+  $('zoomed').src=src;
+  $('photoModal').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+function closeZoom(){
+  $('photoModal').classList.add('hidden');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeLetter();
+    closeZoom();
+  }
+});
+</script>
+</body>
+</html>
